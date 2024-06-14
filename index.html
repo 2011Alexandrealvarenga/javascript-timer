@@ -6,6 +6,35 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Javascript</h1>
+
+  <button onclick="comecar()">Começar</button>
+  <button onclick="parar()">Parar</button>
+
+  <div class="demo"></div>
+
+  <script>
+    let timer;
+
+    function comecar(){
+      // executa depois de 1 segundo a funcao showtime
+      timer = setInterval(showTime, 1000);
+    }
+    function parar(){
+      clearInterval(timer);
+    }
+    function showTime(){
+      let d = new Date();
+      let h = d.getHours();
+      let m = d.getMinutes();
+      let s = d.getSeconds();
   
+      // hora em tempo real
+      let txt = h+':'+m+':'+s;
+
+      document.querySelector('.demo').innerHTML = txt;
+    }
+
+  </script>
 </body>
 </html>
